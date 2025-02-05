@@ -1,8 +1,13 @@
 import "./App.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { Icon } from "leaflet";
 
 function App() {
+  const customIcon = new Icon({
+    iconUrl: "marker-icon.svg",
+    iconSize: [38, 38],
+  });
   return (
     <div className=" main">
       <MapContainer center={[51.505, -0.09]} zoom={13}>
@@ -10,7 +15,7 @@ function App() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[51.505, -0.09]}>
+        <Marker position={[51.505, -0.09]} icon={customIcon}>
           <Popup>
             <div className=" flex flex-col px-4 py-2 justify-center items-center">
               <img src="vite.svg" className=" w-[150px] mb-4"></img>
