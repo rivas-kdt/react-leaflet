@@ -5,7 +5,7 @@ import { NavLink } from "react-router";
 
 const Home = () => {
   return (
-    <div className=" min-h-[calc(100vh-60px)]">
+    <div className=" min-h-full">
       <div className="p-3 w-screen flex justify-between items-center">
         <p className=" text-2xl font-bold">Recent Photos</p>
         <NavLink to={"/"}>All{" >"}</NavLink>

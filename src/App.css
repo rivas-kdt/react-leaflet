@@ -5,6 +5,10 @@
   width: 100vw;
 }
 
+.leaflet-control-geocoder-form input{
+  color: black;
+}
+
 .leaflet-container {
   height: calc(100vh - 60px);
 }
