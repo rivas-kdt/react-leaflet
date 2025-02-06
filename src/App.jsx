@@ -1,31 +1,17 @@
+import { Route, Routes } from "react-router";
 import "./App.css";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import { Icon } from "leaflet";
+import Home from "./pages/home";
+import Map from "./pages/map";
+import Layout from "./components/layout";
 
 function App() {
-  const customIcon = new Icon({
-    iconUrl: "marker-icon.svg",
-    iconSize: [38, 38],
-  });
   return (
-    <div className=" main">
-      <MapContainer center={[51.505, -0.09]} zoom={13}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={[51.505, -0.09]} icon={customIcon}>
-          <Popup>
-            <div className=" flex flex-col px-4 py-2 justify-center items-center">
-              <img src="vite.svg" className=" w-[150px] mb-4"></img>
-              <p>This is a popup</p>
-              <a href="https://react-leaflet.js.org/">Go to link!</a>
-            </div>
-          </Popup>
-        </Marker>
-      </MapContainer>
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="map" element={<Map />} />
+      </Route>
+    </Routes>
   );
 }
 
