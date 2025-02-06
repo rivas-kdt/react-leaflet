@@ -31,7 +31,7 @@ function Map() {
     useEffect(() => {
       if (!map) return;
 
-      const geocoder = L.Control.Geocoder.latLng(); // Default to Nominatim
+      const geocoder = L.Control.Geocoder.photon(); // Default to Nominatim
 
       const geocoderControl = L.Control.geocoder({
         query: "",
@@ -110,3 +110,4 @@ function Map() {
 }
 
 export default Map;
+
