@@ -91,7 +91,7 @@ const Home = () => {
           return (
             <div key={t.id} className=" px-4 py-2.5">
               <div className=" relative">
-                <Card className=" w-full h-[180]" variant="outlined">
+                <Card className=" w-full h-fit" variant="outlined">
                   <CardMedia
                     sx={{ height: 200 }}
                     image={`${t.img}`}
@@ -102,7 +102,7 @@ const Home = () => {
                       <p className=" font-bold">{t.title}</p>
                       <div className=" flex items-center">
                         <FaLocationDot className=" text-white/40" />
-                        <p className=" font-medium text-white/40 italic">
+                        <p className=" font-light text-white/40 italic">
                           {t.location}
                         </p>
                       </div>
