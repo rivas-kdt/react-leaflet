@@ -50,7 +50,7 @@ const Home = () => {
       id: "6",
       title: "Trip to Jerusalem",
       location: "Jerusalem, Jerusalem",
-      date: "01/28/2025",
+      date: "05/09/2022",
       img: "https://picsum.photos/600/300",
       author: "Hans Fajardo Pactol",
     },
@@ -58,7 +58,7 @@ const Home = () => {
       id: "7",
       title: "Dyan lang sa tabi",
       location: "Antipolo, Philippines",
-      date: "01/28/2025",
+      date: "06/12/2024",
       img: "https://picsum.photos/200/300",
       author: "Vonn Pactol Fajardo",
     },
@@ -120,10 +120,10 @@ const Home = () => {
                     </div>
                   </div>
                 </Card>
-                <div className=" absolute rounded-full flex justify-center items-center w-16 h-16 bg-[#242424] top-0 left-0 -translate-x-1/6 -translate-y-1/6">
-                  <span className=" absolute bg-[#242424] h-8 w-8 right-0 top-0 z-10"></span>
-                  <span className=" absolute bg-[#242424] h-8 w-8 left-0 bottom-0 z-10"></span>
-                  <Avatar sx={{ bgcolor: "#00b0ff" }} className=" z-20 text-sm">
+                <div className=" absolute rounded-full flex justify-center items-center w-13 h-13 bg-[#242424] top-0 left-0 z-10">
+                  <span className=" absolute bg-[#242424] h-7 w-14 right-0 -top-1 z-10"></span>
+                  <span className=" absolute bg-[#242424] h-14 w-7 -left-1 bottom-0 z-10"></span>
+                  <Avatar sx={{ bgcolor: "#00b0ff" }} className=" z-20">
                     {t.author
                       .split(" ")
                       .map((n) => n[0])
