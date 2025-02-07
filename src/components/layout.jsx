@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <>
       <Navbar />
-      <div className=" h-[calc(100vh-60px)]">
+      <div className=" min-h-[calc(100vh-60px)]">
         <Outlet />
       </div>
     </>
