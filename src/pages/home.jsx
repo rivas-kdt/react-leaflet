@@ -1,4 +1,11 @@
-import { Avatar, Button, Card, CardContent, CardMedia } from "@mui/material";
+import {
+  Avatar,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Tooltip,
+} from "@mui/material";
 import React from "react";
 import { FaLocationDot, FaPlus } from "react-icons/fa6";
 import { NavLink } from "react-router";
@@ -101,7 +108,7 @@ const Home = () => {
                     <div className=" flex flex-col">
                       <p className=" font-bold">{t.title}</p>
                       <div className=" flex items-center">
-                        <FaLocationDot className=" text-white/40" />
+                        <FaLocationDot className=" text-red-500/40" />
                         <p className=" font-light text-white/40 italic">
                           {t.location}
                         </p>
@@ -123,12 +130,17 @@ const Home = () => {
                 <div className=" absolute rounded-full flex justify-center items-center w-13 h-13 bg-[#242424] top-0 left-0 z-10">
                   <span className=" absolute bg-[#242424] h-7 w-14 right-0 -top-1 z-10"></span>
                   <span className=" absolute bg-[#242424] h-14 w-7 -left-1 bottom-0 z-10"></span>
-                  <Avatar sx={{ bgcolor: "#00b0ff" }} className=" z-20 -translate-x-[2px] -translate-y-[2px]">
-                    {t.author
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </Avatar>
+                  <Tooltip title={t.author}>
+                    <Avatar
+                      sx={{ bgcolor: "#00b0ff" }}
+                      className=" z-20 -translate-x-[2px] -translate-y-[2px]"
+                    >
+                      {t.author
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </Avatar>
+                  </Tooltip>
                 </div>
               </div>
             </div>
