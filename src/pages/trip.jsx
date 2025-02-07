@@ -12,66 +12,122 @@ const Trip = () => {
   const [address, setAddress] = useState();
 
   const images = [
-    { src: "/hansk.png", alt: "Mountain" },
     {
+      id: 1,
+      src: "/hansk.png",
+      alt: "Mountain",
+      description: "Hans Kalbo Fajardo",
+      author: "Hans Fajardo",
+      date: "2025-02-07",
+      location: "Region, Philippines",
+    },
+    {
+      id: 2,
       src: "https://picsum.photos/id/1015/400/400",
       alt: "River",
       description: "A majestic mountain landscape",
+      author: "Vonn Pactol",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 3,
       src: "/scr.png",
       alt: "Forest",
       description: "A majestic mountain landscape",
+      author: "Hanns Curtis",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 4,
       src: "https://picsum.photos/id/1018/600/400",
       alt: "Mountain",
       description: "A majestic mountain landscape",
+      author: "Vhonn Navarro",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 5,
       src: "https://picsum.photos/id/1015/400/400",
       alt: "River",
       description: "A serene river flowing through nature",
+      author: "Roi Ice Tanedo",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 6,
       src: "https://picsum.photos/id/1019/400/600",
       alt: "Forest",
       description: "A lush green forest",
+      author: " Hans Pactol",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 7,
       src: "https://picsum.photos/id/1016/600/600",
       alt: "Waterfall",
       description: "A powerful waterfall in action",
+      author: "Vonn Fajardo",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 8,
       src: "https://picsum.photos/id/1020/400/300",
       alt: "Road",
       description: "A winding road through scenic landscape",
+      author: "Oishi Prawn Crackers",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 9,
       src: "https://picsum.photos/id/1021/400/400",
       alt: "Coast",
       description: "A beautiful coastal view",
+      author: "Clover",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 10,
       src: "https://picsum.photos/id/1022/400/600",
       alt: "Lake",
       description: "A tranquil lake surrounded by nature",
+      author: "Vonn Fajardo Pactol",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 11,
       src: "https://picsum.photos/id/1023/600/400",
       alt: "Bear",
       description: "A wild bear in its natural habitat",
+      author: "Hans Pactol Fajardo",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 12,
       src: "https://picsum.photos/id/1024/400/400",
       alt: "Cactus",
       description: "A desert cactus under the sun",
+      author: "Hans Batumbakal",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
     {
+      id: 13,
       src: "https://picsum.photos/id/1025/400/300",
       alt: "Pug",
       description: "An adorable pug looking at the camera",
+      author: "Vonn Mondragon Jr.",
+      date: "2025-02-07",
+      location: "Region, Philippines",
     },
   ];
 
@@ -110,7 +166,9 @@ const Trip = () => {
       </p>
       <div className=" flex items-center justify-between mt-0 m-3">
         <p className=" text-2xl font-bold">Moments</p>
-        <Button variant=" contained"><FaPlus className=" bg-white text-black rounded-md w-8 h-8"/></Button>
+        <Button variant=" contained">
+          <FaPlus className=" bg-white text-black rounded-md w-8 h-8" />
+        </Button>
       </div>
       <DynamicGrid imageData={images} />
     </div>

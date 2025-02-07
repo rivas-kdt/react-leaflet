@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router";
 
 function getSpanClass(width, height) {
   const aspectRatio = width / height;
@@ -25,6 +26,7 @@ export default function DynamicGrid({ imageData }) {
       img.src = image.src;
     });
   }, []);
+  let navigate = useNavigate();
 
   return (
     <div className="container mx-auto p-2">
@@ -39,6 +41,9 @@ export default function DynamicGrid({ imageData }) {
             <div
               key={index}
               className={`rounded-lg overflow-hidden shadow-lg ${spanClass}`}
+              onClick={() => {
+                navigate(`/photo/${image.id}`);
+              }}
             >
               {/* <FlipCard imageSrc={image.src} imageAlt={image.alt} description={image.description}/> */}
               <img
