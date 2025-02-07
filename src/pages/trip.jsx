@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaLocationDot, FaPlus } from "react-icons/fa6";
 import { useParams } from "react-router";
 import DynamicGrid from "../components/DynamicGrid";
+import { Button } from "@mui/material";
 
 const Trip = () => {
   let params = useParams();
@@ -12,18 +13,66 @@ const Trip = () => {
 
   const images = [
     { src: "/hansk.png", alt: "Mountain" },
-    { src: "https://picsum.photos/id/1015/400/400", alt: "River", description: "A majestic mountain landscape" },
-    { src: "/scr.png", alt: "Forest", description: "A majestic mountain landscape" },
-    { src: "https://picsum.photos/id/1018/600/400", alt: "Mountain", description: "A majestic mountain landscape" },
-    { src: "https://picsum.photos/id/1015/400/400", alt: "River", description: "A serene river flowing through nature" },
-    { src: "https://picsum.photos/id/1019/400/600", alt: "Forest", description: "A lush green forest" },
-    { src: "https://picsum.photos/id/1016/600/600", alt: "Waterfall", description: "A powerful waterfall in action" },
-    { src: "https://picsum.photos/id/1020/400/300", alt: "Road", description: "A winding road through scenic landscape" },
-    { src: "https://picsum.photos/id/1021/400/400", alt: "Coast", description: "A beautiful coastal view" },
-    { src: "https://picsum.photos/id/1022/400/600", alt: "Lake", description: "A tranquil lake surrounded by nature" },
-    { src: "https://picsum.photos/id/1023/600/400", alt: "Bear", description: "A wild bear in its natural habitat" },
-    { src: "https://picsum.photos/id/1024/400/400", alt: "Cactus", description: "A desert cactus under the sun" },
-    { src: "https://picsum.photos/id/1025/400/300", alt: "Pug", description: "An adorable pug looking at the camera" },
+    {
+      src: "https://picsum.photos/id/1015/400/400",
+      alt: "River",
+      description: "A majestic mountain landscape",
+    },
+    {
+      src: "/scr.png",
+      alt: "Forest",
+      description: "A majestic mountain landscape",
+    },
+    {
+      src: "https://picsum.photos/id/1018/600/400",
+      alt: "Mountain",
+      description: "A majestic mountain landscape",
+    },
+    {
+      src: "https://picsum.photos/id/1015/400/400",
+      alt: "River",
+      description: "A serene river flowing through nature",
+    },
+    {
+      src: "https://picsum.photos/id/1019/400/600",
+      alt: "Forest",
+      description: "A lush green forest",
+    },
+    {
+      src: "https://picsum.photos/id/1016/600/600",
+      alt: "Waterfall",
+      description: "A powerful waterfall in action",
+    },
+    {
+      src: "https://picsum.photos/id/1020/400/300",
+      alt: "Road",
+      description: "A winding road through scenic landscape",
+    },
+    {
+      src: "https://picsum.photos/id/1021/400/400",
+      alt: "Coast",
+      description: "A beautiful coastal view",
+    },
+    {
+      src: "https://picsum.photos/id/1022/400/600",
+      alt: "Lake",
+      description: "A tranquil lake surrounded by nature",
+    },
+    {
+      src: "https://picsum.photos/id/1023/600/400",
+      alt: "Bear",
+      description: "A wild bear in its natural habitat",
+    },
+    {
+      src: "https://picsum.photos/id/1024/400/400",
+      alt: "Cactus",
+      description: "A desert cactus under the sun",
+    },
+    {
+      src: "https://picsum.photos/id/1025/400/300",
+      alt: "Pug",
+      description: "An adorable pug looking at the camera",
+    },
   ];
 
   useEffect(() => {
@@ -56,10 +105,14 @@ const Trip = () => {
         the essence of every destination I’ve explored. From bustling cityscapes
         to serene landscapes, each album tells a unique story of the places I’ve
         visited, the cultures I’ve encountered, and the unforgettable moments
-        along the way.
+        along the way. Experience the beauty, history, and vibrant energy that
+        make each journey truly special.
       </p>
-      <p className=" mt-0 m-3 text-2xl font-bold">Memories</p>
-       <DynamicGrid imageData={images}/>
+      <div className=" flex items-center justify-between mt-0 m-3">
+        <p className=" text-2xl font-bold">Moments</p>
+        <Button variant=" contained"><FaPlus className=" bg-white text-black rounded-md w-8 h-8"/></Button>
+      </div>
+      <DynamicGrid imageData={images} />
     </div>
   );
 };

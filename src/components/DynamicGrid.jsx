@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import FlipCard from "./FlipCard";
 
 function getSpanClass(width, height) {
   const aspectRatio = width / height;
