@@ -12,6 +12,7 @@ export default function Login() {
     e.preventDefault()
     try {
       const response = await axios.post(`${API_URL}/auth/login`, { email, password })
+      console.log(response)
       localStorage.setItem("token", response.data.token)
       console.log("Logged In Successfully!!!")
     } catch (err) {
