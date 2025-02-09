@@ -60,6 +60,18 @@ const Navbar = () => {
                 <ListItemText>Map</ListItemText>
               </ListItemButton>
             </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                <ListItemIcon>
+                  <FaMapLocationDot className=" w-[30px] h-[30px] text-white" />
+                </ListItemIcon>
+                <ListItemText>Log In</ListItemText>
+              </ListItemButton>
+            </ListItem>
           </List>
         </Box>
       </Drawer>
