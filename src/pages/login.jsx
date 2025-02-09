@@ -24,7 +24,7 @@ export default function Login() {
     e.preventDefault()
     try {
       const response = await axios.post(`${API_URL}/register`, { email, password })
-      localStorage.setItem("token", response.data.token)
+      localStorage.setItem("token", response.data)
     } catch (err) {
       setError("Error registering user")
     }
