@@ -1,42 +1,57 @@
-import { useState } from "react"
-import axios from "axios"
+import { useState } from "react";
+import axios from "axios";
+import Cookies from "universal-cookie";
 
-const API_URL = "https://express-api-tawny-alpha.vercel.app" // Replace with your API URL
+const API_URL = "https://express-api-tawny-alpha.vercel.app"; // Replace with your API URL
 
 export default function Login() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [error, setError] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleLogin = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const response = await axios.post(`${API_URL}/auth/login`, { email, password })
-      console.log(response)
-      localStorage.setItem("token", response.data)
-      console.log("Logged In Successfully!!!")
+      const response = await axios.post(`${API_URL}/auth/login`, {
+        email,
+        password,
+      });
+      console.log(response);
+      localStorage.setItem("token", response.data);
+      const cookies = new Cookies();
+      cookies.set("jwt", response.data, { path: "/" });
+      console.log(cookies.get("myCat"));
+      console.log("Logged In Successfully!!!");
     } catch (err) {
-      setError("Invalid credentials")
+      setError("Invalid credentials");
     }
-  }
+  };
 
   const handleRegister = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const response = await axios.post(`${API_URL}/register`, { email, password })
-      localStorage.setItem("token", response.data)
+      const response = await axios.post(`${API_URL}/register`, {
+        email,
+        password,
+      });
+      localStorage.setItem("token", response.data);
     } catch (err) {
-      setError("Error registering user")
+      setError("Error registering user");
     }
-  }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h1 className="text-2xl font-bold mb-6 text-center">Login / Register</h1>
+        <h1 className="text-2xl font-bold mb-6 text-center">
+          Login / Register
+        </h1>
         <form>
           <div className="mb-4">
-            <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="username"
+              className="block text-sm font-medium text-gray-700"
+            >
               Username
             </label>
             <input
@@ -48,7 +63,10 @@ export default function Login() {
             />
           </div>
           <div className="mb-6">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
               Password
             </label>
             <input
@@ -77,6 +95,5 @@ export default function Login() {
         {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
       </div>
     </div>
-  )
+  );
 }
-
