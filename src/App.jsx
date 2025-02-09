@@ -5,6 +5,7 @@ import Map from "./pages/map";
 import Layout from "./components/layout";
 import Trip from "./pages/trip";
 import Photo from "./pages/photo";
+import Login from "./pages/login";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="map" element={<Map />} />
         <Route path="trip/:id" element={<Trip/>} />
         <Route path="photo/:id" element={<Photo/>} />
+        <Route path="login" element={<Login />} />
       </Route>
     </Routes>
   );
