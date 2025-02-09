@@ -13,7 +13,7 @@ export default function Login() {
     try {
       const response = await axios.post(`${API_URL}/auth/login`, { email, password })
       console.log(response)
-      localStorage.setItem("token", response.data.token)
+      localStorage.setItem("token", response.data)
       console.log("Logged In Successfully!!!")
     } catch (err) {
       setError("Invalid credentials")
