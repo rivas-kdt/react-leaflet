@@ -1,17 +1,16 @@
-import {
-  Avatar,
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Tooltip,
-} from "@mui/material";
-import React from "react";
+import { Avatar, Button, Card, CardMedia, Tooltip } from "@mui/material";
 import { FaLocationDot, FaPlus } from "react-icons/fa6";
 import { NavLink } from "react-router";
 import { GrLinkNext } from "react-icons/gr";
+import { useAuth } from "../lib/auth";
 
 const Home = () => {
+  const { loading } = useAuth();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   const trips = [
     {
       id: "1",
@@ -70,6 +69,7 @@ const Home = () => {
       author: "Vonn Pactol Fajardo",
     },
   ];
+
   return (
     <div className=" min-h-full">
       <div className="p-3 w-screen flex justify-between items-center">
